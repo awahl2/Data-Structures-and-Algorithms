@@ -48,9 +48,9 @@ class lab1 {
 		// (*** add last name)
 		System.out.println(first_name + " is a student at Huntington University,");
         System.out.println("and their last name is " + last_name + ".");
-		System.out.println("This student is" + age + "years old and has a gpa of " + gpa + ".");
+		System.out.println("This student is " + age + " years old and has a gpa of " + gpa + ".");
 		int new_age = age + 20; // (*** fix to add 20 to age)
-		System.out.println("In ten years the student will be " + new_age + " years old.");
+		System.out.println("In twenty years the student will be " + new_age + " years old.");
 		System.out.println();
 
 		// #3
@@ -73,15 +73,12 @@ class lab1 {
 		// if N is set to 4, your code displays 4, 8, 12 ... 1000
 		// hint: use mod % ... if divisible by 2, then print
 
-        // I AM HERE
-
 		int N = 10;
 
-		int x = 0;
-		while (x < 10) {
-			if (x == 2 || x == 4)
-				System.out.printf("%d, ", x);
-			x = x + 2;
+		int x = N;
+		while (x <= 1000) {
+			System.out.printf("%d, ", x);
+			x += N;
 		}
 		System.out.println();
 		System.out.println();
@@ -94,8 +91,15 @@ class lab1 {
 		// 3.5 to 3.74 dean's list - honors
 		// 3.25 to 3.49 dean's list
 		//
-		if (gpa >= 3.75 && gpa <= 4.0)
+		if (gpa >= 3.75 && gpa <= 4.0) {
 			System.out.println("dean's list - high honors");
+		} else if (gpa >= 3.5 && gpa <= 3.74) {
+			System.out.println("dean's list - honors");
+		} else if (gpa >= 3.25 && gpa <= 3.49) {
+			System.out.println("dean's list");
+		} else {
+			// do nothing (why doesn't java have a pass statement like python?)
+		}
 		System.out.println();
 
 		// #6
@@ -110,20 +114,37 @@ class lab1 {
 		System.out.println("Smallest is " + small);
 		System.out.println();
 
+
+		int large = values[0];
+		for (int i = 1; i < values.length; i++) {
+			if (values[i] > large)
+				large = values[i];
+		}
+
+		System.out.println("Largest is " + large);
+		System.out.println();
+		
 		// #7
 		// create a static method called allSame that takes three integers
 		// and returns true if they are all the same value
 		// and false if they are not all the same value
 		// demonstrate your method with three method calls
-		System.out.println(allSame(10, 20));
 
+		// method call 1
+		System.out.println(allSame(10, 20, 30));
+
+		// method call 2
 		int value1 = 9;
 		int value2 = 9;
-		if (allSame(value1, value2))
-			System.out.println(value1 + " same as " + value2);
+		int value3 = 9;
+		if (allSame(value1, value2, value3))
+			System.out.println(value1 + " same as " + value2 + " and " + value3);
 		else
 			System.out.println(value1 + " NOT same as " + value2);
 		// (*** add a third method call for allSame )
+
+		// method call 3
+		System.out.println(allSame(5, 5, 5));
 
 		System.out.println();
 
@@ -145,11 +166,11 @@ class lab1 {
 	}// main
 
 	// (*** add a third variable c)
-	public static boolean allSame(int a, int b) {
+	public static boolean allSame(int a, int b, int c) {
 		boolean result = false;
-
-		if (a == b)
+		if (a == b && b == c) {
 			result = true;
+		}
 
 		return result;
 	}
@@ -157,12 +178,15 @@ class lab1 {
 	// (*** modify to calculate average)
 	public static double getAverage(int[] temp) {
 		int sum = 0;
+		int average = 0;
 
 		for (int i = 0; i < temp.length; i++) {
 			sum = sum + temp[i];
 		}
 
-		return sum;
+		average = sum / temp.length;
+		return average;
+		
 	}
 
 }// class Main
