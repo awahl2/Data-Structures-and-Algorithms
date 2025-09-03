@@ -13,6 +13,6 @@ public class mysteryAlgorithm {
         }
 
         System.out.println("Reversed Number: " + reversed);
-    }
+    } // main
 
-}
+} // class
