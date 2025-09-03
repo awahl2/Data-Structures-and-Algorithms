@@ -1,5 +1,5 @@
 // CS 325 Data Structures - Lehman
-//
+// Anna Wahl
 // fall 2025
 // lab1.java
 //
