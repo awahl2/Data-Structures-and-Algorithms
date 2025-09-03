@@ -4,7 +4,10 @@ public class mysteryAlgorithm {
 
         int reversed = 0;
         int digit = 0;
-        int num = inputNumber(); // Assume this function gets a number from the user
+
+        int num = Integer.parseInt(args[0]);
+        
+        // int num = inputNumber(); // Assume this function gets a number from the user
 
         while (num > 0) {
             digit = num % 10;
