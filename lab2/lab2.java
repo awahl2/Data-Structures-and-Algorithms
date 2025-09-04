@@ -11,7 +11,7 @@
 // Mostly time limits finding larger numbers. I input 100000000, but it took too long. If I were only to output the last number, I would be able to do more.
 
 public class lab2 {
-    
+
     public static void main(String[] args) {
 
         int N = 0;
@@ -30,7 +30,7 @@ public class lab2 {
         lights[0] = false;
         lights[1] = false;
 
-        // set lights[2] to lights[N] to false
+        // set lights[2] to lights[N] to true
         for (int i = 2; i <= N; i++) {
             lights[i] = true;
         }
@@ -50,4 +50,3 @@ public class lab2 {
         }
     }
 }
-
